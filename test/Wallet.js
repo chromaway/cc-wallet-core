@@ -37,6 +37,29 @@ describe('Wallet', function () {
     wallet = null
   }
 
+  describe('temp', function () {
+    beforeEach(setup)
+    after(cleanup)
+    
+    it('constructTx', function (done) {
+      var seed = '421fc385fdae724b246b80e0212f77bb'
+      wallet.initialize(seed)
+      wallet.once('syncStop', function () {
+        var bitcoin = wallet.getAssetDefinitionByMoniker('bitcoin')
+        var targets = [{address: 'mkwmtrHX99ozTegy77wTgPZwodm4E2VbBr', value: 10000}]
+
+        wallet.createTx(bitcoin, targets, function (error, tx) {
+          expect(error).to.be.null
+
+          wallet.transformTx(tx, 'signed', {seedHex: seed}, function (error, tx) {
+            expect(error).to.be.null
+	    done()
+	  })
+	})	
+      })
+    })
+  })
+
   describe('instance methods', function () {
     beforeEach(setup)
     afterEach(cleanup)

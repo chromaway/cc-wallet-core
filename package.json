@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/chromaway/cc-wallet-core/issues"
   }, 
-  "version": "0.8.10", 
+  "version": "0.8.11", 
   "contributors": [
     {
       "name": "Henrik Hjelte", 
@@ -48,7 +48,7 @@
     "blockchainjs": "git://github.com/chromaway/blockchainjs.git#v0.3.12", 
     "q": "1.1.2", 
     "buffer-equal": "0.0.1", 
-    "coloredcoinjs-lib": "git://github.com/chromaway/coloredcoinjs-lib#v0.3.8"
+    "coloredcoinjs-lib": "git://github.com/chromaway/coloredcoinjs-lib#v0.3.8x"
   }, 
   "main": "./lib/index.js", 
   "name": "cc-wallet-core"
